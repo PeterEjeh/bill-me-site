@@ -1,0 +1,20 @@
+# Redirect /download to the APK
+[[redirects]]
+  from = "/download"
+  to = "/Bill-Me v1.0.apk"
+  status = 200
+
+# Proper MIME type and headers for APK
+[[headers]]
+  for = "/*.apk"
+  [headers.values]
+    Content-Type = "application/vnd.android.package-archive"
+    Content-Disposition = "attachment"
+    X-Content-Type-Options = "nosniff"
+
+# Cache static assets
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Bill Me</title>
+  <meta name="description" content="Privacy Policy for Bill Me — Transparent P2P Bill Sponsorship Platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #F7F8F6;
+      --primary: #10B981;
+      --primary-dark: #059669;
+      --text: #111827;
+      --text-muted: #4B5563;
+      --card-surface: #FFFFFF;
+      --border: rgba(17, 24, 39, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 248, 246, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+    .nav-logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .nav-back {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    /* Content Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+    }
+    .legal-card {
+      background: var(--card-surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+    @media (max-width: 640px) {
+      .legal-card { padding: 28px 20px; }
+      .container { padding: 32px 16px 64px; }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .meta {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-top: 36px;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    p {
+      margin-bottom: 16px;
+      color: var(--text-muted);
+    }
+    ul, ol {
+      margin-bottom: 18px;
+      padding-left: 24px;
+      color: var(--text-muted);
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    a {
+      color: var(--primary-dark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    a:hover {
+      color: var(--primary);
+    }
+
+    .callout {
+      background: rgba(16, 185, 129, 0.05);
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 24px 0;
+    }
+    .callout p {
+      margin-bottom: 0;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/image_bce3e3fa.png" alt="Bill Me" />
+        <span>Bill Me</span>
+      </a>
+      <a href="index.html" class="nav-back">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- Legal Content -->
+  <div class="container">
+    <article class="legal-card">
+      <div class="badge">Legal & Security</div>
+      <h1>Privacy Policy</h1>
+      <div class="meta">
+        <strong>Effective Date:</strong> November 9, 2026 &bull; <strong>Platform:</strong> Bill Me (Android &amp; PWA)
+      </div>
+
+      <h2>1. Introduction</h2>
+      <p>
+        Welcome to Bill Me ("we," "our," or "us"). Bill Me is a direct bill-sponsorship and community support platform that connects individuals seeking assistance with verified unpaid invoices or urgent needs ("Beneficiaries") with sponsors willing to fund those bills directly ("Sponsors" or "Donors").
+      </p>
+      <div class="callout">
+        <p>
+          Because Bill Me operates on a zero-middleman, non-gateway model, <strong>we do not hold, escrow, or process fiat funds</strong>. Instead, we provide automated document verification, anti-fraud fingerprinting, receipt auditing, and moderated communication tools.
+        </p>
+      </div>
+      <p>
+        This Privacy Policy explains what information we collect, how we process it, and how we protect your privacy.
+      </p>
+
+      <h2>2. Information We Collect</h2>
+
+      <h3>2.1 Account &amp; Authentication Information</h3>
+      <ul>
+        <li><strong>Google Sign-In Data:</strong> When you sign in using Google Authentication (via Android Credential Manager or Web OAuth), we collect your unique user identifier (uid), display name, email address, and profile photo URL.</li>
+        <li><strong>Profile Preferences:</strong> Optional profile details you provide, such as your display name, biography, phone number, avatar image, and notification preferences.</li>
+      </ul>
+
+      <h3>2.2 Bill, Invoice &amp; Payout Information (Beneficiaries)</h3>
+      <ul>
+        <li><strong>Uploaded Invoice Documents:</strong> Photos or PDF files of unpaid bills (e.g., school tuition schedules, medical invoices, exam fee notices, work equipment quotes).</li>
+        <li><strong>Extracted Bill Metadata:</strong> Beneficiary name, issuing institution/vendor name, invoice/matriculation reference number, itemized fee breakdown, amount due, currency, and due date.</li>
+        <li><strong>Receiving Bank Account Details:</strong> Institution bursary bank details or personal receiving bank name, 10-digit NUBAN account number, and verified account name so Sponsors can send transfers directly.</li>
+      </ul>
+
+      <h3>2.3 Sponsorship &amp; Transfer Receipt Information (Sponsors)</h3>
+      <ul>
+        <li><strong>Transfer Receipts:</strong> Screenshots or PDFs of bank/fintech debit transfer slips uploaded to confirm a sponsorship.</li>
+        <li><strong>Receipt Audit Metadata:</strong> Extracted NIBSS Session ID or bank transaction reference, transfer amount, recipient account number, and sponsorship display preferences (including whether you choose to sponsor Anonymously).</li>
+      </ul>
+
+      <h3>2.4 Anti-Duplicate &amp; Fraud-Prevention Fingerprints</h3>
+      <ul>
+        <li><strong>Perceptual Image Hashes (imagePhash):</strong> A 64-bit mathematical hash computed on-device from your uploaded document to detect duplicate visual uploads.</li>
+        <li><strong>Composite Metadata Fingerprints (metadataFingerprint):</strong> A cryptographic SHA-256 hash derived from normalized institution name, invoice reference, and amount due to prevent duplicate publishing across accounts.</li>
+        <li><strong>Fraud Audit Logs:</strong> If an account attempts to upload or publish a bill already registered to another user, we log a restricted security record (<code>fraud_flags</code>) containing the original bill ID, attempting UID, and match stage.</li>
+      </ul>
+
+      <h3>2.5 In-App Safe Chat Data</h3>
+      <ul>
+        <li><strong>Chat Messages &amp; Metadata:</strong> Messages exchanged between Sponsors and Beneficiaries, participant UIDs, anonymity flags, timestamps, and automated safety risk classifications (<code>SAFE</code>, <code>SUSPICIOUS</code>, <code>BLOCKED</code>).</li>
+      </ul>
+
+      <h3>2.6 Device &amp; Connectivity Information</h3>
+      <ul>
+        <li><strong>Network Status:</strong> Real-time online/offline connectivity state used to enable cached viewing and prevent data loss during form submission.</li>
+      </ul>
+
+      <h2>3. Strictly Prohibited Sensitive Identifiers (Automatic Redaction)</h2>
+      <p>Bill Me never requests and strictly prohibits the submission of sensitive government or banking credentials, including:</p>
+      <ul>
+        <li>Bank Verification Numbers (BVN)</li>
+        <li>National Identification Numbers (NIN)</li>
+        <li>Social Security Numbers (SSN)</li>
+        <li>Bank PINs, OTPs, CVVs, or online banking passwords</li>
+      </ul>
+      <p>
+        Our client-side and AI pipelines automatically scan for and redact 11-digit national/banking ID patterns and block chat messages that attempt to share or solicit these identifiers.
+      </p>
+
+      <h2>4. How We Use Your Information &amp; Automated AI Processing</h2>
+      <ul>
+        <li><strong>Public Bill Listings &amp; Direct P2P Transfers:</strong> Bills published on Bill Me (and associated payment account details) are visible to authenticated users so Sponsors can inspect the invoice and transfer funds directly to the institution or Beneficiary.</li>
+        <li><strong>Automated AI Document Auditing:</strong> Uploaded invoices and transfer receipts are processed via Google Gemini AI (Firebase AI Logic) to:
+          <ul>
+            <li>Verify whether an uploaded document is an unpaid invoice vs. an already-paid receipt (already-paid receipts are blocked from being posted as bills).</li>
+            <li>Extract line items, totals, and institutional letterheads.</li>
+            <li>Audit uploaded sponsor transfer slips for matching NUBAN account numbers, amounts, and unique Session IDs (<code>settled_receipts</code>).</li>
+          </ul>
+        </li>
+        <li><strong>Duplicate &amp; Replay Prevention:</strong> We use <code>imagePhash</code>, <code>bill_fingerprints</code>, and <code>settled_receipts</code> locks to ensure the same invoice or transfer receipt cannot be reused across multiple listings or accounts.</li>
+        <li><strong>AI Chat Moderation &amp; Safety Shield:</strong> Chat messages are evaluated in real time to block harassment, predatory demands, off-platform coercion, or sharing of sensitive personal identifiers.</li>
+        <li><strong>Public &amp; Link-Only Campaign Pools (<code>/giveaway/:slug</code>):</strong> When you create or join a Campaign Pool, we associate your bill or sponsorship with that pool's slug and update aggregate pool counters (total bills sorted and total amount disbursed).</li>
+        <li><strong>Public Proof Cards ("PAID O!!"):</strong> When a bill is sponsored, we mask the Beneficiary's last name (e.g., "Ejeh P.") on downloadable/shareable proof cards to protect Beneficiary dignity while verifying impact.</li>
+      </ul>
+
+      <h2>5. Data Sharing &amp; Disclosure</h2>
+      <ul>
+        <li><strong>With Other Platform Users:</strong> Published bills, invoice snapshots, and receiving bank account numbers are visible to authenticated users for sponsorship purposes. If a Sponsor enables Anonymous Sponsorship, their display name is masked as "Anonymous Sponsor" on public listings and chats.</li>
+        <li><strong>Service Providers:</strong> We use Google Firebase (Authentication, Cloud Firestore, Firebase AI Logic) and Vercel (Web hosting and Android App Links routing) to operate the platform.</li>
+        <li><strong>No Sale of Personal Data:</strong> We do not sell, rent, or trade your personal information to third-party advertisers or data brokers.</li>
+        <li><strong>Legal &amp; Fraud Compliance:</strong> We may disclose information if required by law or to investigate verified financial fraud, forgery, or threats to user safety.</li>
+      </ul>
+
+      <h2>6. Data Storage, Security &amp; Retention</h2>
+      <ul>
+        <li><strong>Zero-Trust Security Rules:</strong> All database reads and writes are enforced by strict Cloud Firestore security rules requiring authentication, schema validation, owner-only bill deletion, and participant-only chat access.</li>
+        <li><strong>Client-Side Compression:</strong> Invoice images and transfer receipts are compressed on-device prior to upload to minimize data exposure and bandwidth usage.</li>
+        <li><strong>Retention &amp; Deletion:</strong> You may delete your open bill listings at any time from your Profile screen, which also releases the associated <code>bill_fingerprints</code> lock. You may request full account deletion by contacting our support team.</li>
+      </ul>
+
+      <h2>7. Your Rights</h2>
+      <p>Depending on your jurisdiction (including under the Nigeria Data Protection Act (NDPA), GDPR, and CCPA), you have the right to:</p>
+      <ul>
+        <li>Access and review the personal data associated with your account.</li>
+        <li>Update your profile and payout details or toggle your anonymity in sponsorships and chats.</li>
+        <li>Delete your published bills and request erasure of your account data.</li>
+      </ul>
+
+      <h2>8. Permissions Used (Android &amp; Web)</h2>
+      <ul>
+        <li><strong>Camera (<code>android.permission.CAMERA</code>):</strong> Optional; used only when you explicitly choose to capture a photo of an invoice or transfer receipt.</li>
+        <li><strong>System Photo &amp; Document Picker:</strong> Uses Android's zero-permission Photo Picker and Storage Access Framework (<code>image/*</code>, <code>application/pdf</code>)—Bill Me never requests broad background access to your photo library.</li>
+        <li><strong>Internet &amp; Network State:</strong> Used to sync real-time Firestore updates and detect offline mode.</li>
+      </ul>
+
+      <h2>9. Contact Us</h2>
+      <p>
+        For privacy inquiries, data deletion requests, or security reports, please contact the Bill Me team at:
+        <br />
+        <a href="mailto:petes-tech@proton.me"><strong>petes-tech@proton.me</strong></a>
+      </p>
+    </article>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2026 Bill Me. All rights reserved.
+  </footer>
+
+</body>
+</html>

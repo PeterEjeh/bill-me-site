@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bill Me — Abeg, sponsor me!</title>
+  <meta name="description"
+    content="Post verified bills. Get sponsored directly. No middleman. Nigeria's transparent P2P bill sponsorship platform." />
+  <meta property="og:title" content="Bill Me — Abeg, sponsor me!" />
+  <meta property="og:description"
+    content="Post verified school fees, medical bills, or work tools and get them funded directly by a sponsor." />
+  <meta property="og:image" content="images/image_98576fd3.png" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #F7F8F6;
+      --primary: #10B981;
+      --primary-dark: #059669;
+      --text: #111827;
+      --text-muted: #6B7280;
+      --card-dark: #0F2B1D;
+      --card-surface: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Navigation ── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(247, 248, 246, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav.scrolled {
+      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .nav-logo span {
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: var(--text);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover {
+      background: #1F2937;
+      transform: translateY(-1px);
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 140px 24px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 520px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 24px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .accent {
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 460px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      background: transparent;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1.5px solid rgba(17, 24, 39, 0.15);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text);
+      background: rgba(17, 24, 39, 0.03);
+      transform: translateY(-2px);
+    }
+
+    /* Hero phone mockup */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .phone-frame {
+      position: relative;
+      width: 300px;
+    }
+
+    .phone-frame img {
+      width: 100%;
+      border-radius: 32px;
+      box-shadow:
+        0 24px 80px rgba(15, 43, 29, 0.18),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero-float-badge {
+      position: absolute;
+      background: var(--card-surface);
+      border-radius: 14px;
+      padding: 12px 18px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .hero-float-badge.badge-1 {
+      top: 15%;
+      right: -20px;
+      animation-delay: 0s;
+    }
+
+    .hero-float-badge.badge-2 {
+      bottom: 20%;
+      left: -30px;
+      animation-delay: 1.5s;
+    }
+
+    .float-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .float-icon.green {
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--primary);
+    }
+
+    .float-icon.dark {
+      background: rgba(17, 24, 39, 0.08);
+      color: var(--text);
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* ── Section Base ── */
+    .section {
+      padding: 100px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 64px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── How It Works ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .step-card {
+      background: var(--card-surface);
+      border: 1px solid rgba(17, 24, 39, 0.06);
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .step-number {
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .step-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .step-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── Features ── */
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    .feature-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .feature-row.reverse {
+      direction: rtl;
+    }
+
+    .feature-row.reverse>* {
+      direction: ltr;
+    }
+
+    .feature-text {
+      max-width: 480px;
+    }
+
+    .feature-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: rgba(16, 185, 129, 0.08);
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+
+    .feature-text h3 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .feature-text p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .feature-list li svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .feature-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .feature-phone {
+      width: 280px;
+      border-radius: 28px;
+      box-shadow:
+        0 20px 60px rgba(15, 43, 29, 0.14),
+        0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    /* ── App Showcase (Spotlight) ── */
+    .showcase {
+      background: var(--card-dark);
+      border-radius: 28px;
+      padding: 80px 48px;
+      margin: 0 24px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .showcase::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(ellipse at 30% 20%, rgba(16, 185, 129, 0.12), transparent 60%);
+      pointer-events: none;
+    }
+
+    .showcase .section-label {
+      color: var(--primary);
+    }
+
+    .showcase h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+
+    .showcase>p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .showcase-phones {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .showcase-phones img {
+      width: 220px;
+      border-radius: 24px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .showcase-phones img:hover {
+      transform: translateY(-8px);
+    }
+
+    .showcase-phones img.featured {
+      width: 250px;
+      transform: scale(1.05);
+    }
+
+    .showcase-phones img.featured:hover {
+      transform: scale(1.05) translateY(-8px);
+    }
+
+    /* ── Stats ── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      padding: 80px 24px 100px;
+      text-align: center;
+    }
+
+    .cta-card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--card-surface);
+      border: 1px solid rgba(17, 24, 39, 0.06);
+      border-radius: 24px;
+      padding: 64px 48px;
+    }
+
+    .cta-card h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .cta-card p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid rgba(17, 24, 39, 0.06);
+      padding: 48px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .footer-brand span {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Mobile Menu ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: rgba(247, 248, 246, 0.98);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+      padding: 24px;
+      z-index: 99;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 48px;
+        padding-top: 120px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .phone-frame {
+        width: 260px;
+      }
+
+      .hero-float-badge {
+        display: none;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .feature-row,
+      .feature-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        direction: ltr;
+        text-align: center;
+      }
+
+      .feature-text {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .feature-list {
+        align-items: center;
+      }
+
+      .showcase {
+        padding: 60px 24px;
+        margin: 0 16px;
+      }
+
+      .showcase-phones {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .showcase-phones img {
+        width: 160px;
+      }
+
+      .showcase-phones img.featured {
+        width: 180px;
+      }
+
+      .stats-bar {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .cta-card {
+        padding: 48px 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .showcase-phones img {
+        width: 130px;
+      }
+
+      .showcase-phones img.featured {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="images/image_bce3e3fa.png" alt="Bill Me" />
+        <span>Bill Me</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#app">The App</a></li>
+      </ul>
+      <a href="Bill-Me v1.0.apk" download class="nav-cta">
+        Get the App
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 17l9.2-9.2M17 17V7.8H7.8" />
+        </svg>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+    <a href="#features" onclick="closeMobileMenu()">Features</a>
+    <a href="#app" onclick="closeMobileMenu()">The App</a>
+    <a href="#download" onclick="closeMobileMenu()">Get the App</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Built for Nigeria</div>
+      <h1>Post your bill.<br /><span class="accent">Get sponsored.</span></h1>
+      <p class="hero-sub">
+        Upload verified school fees, medical bills, or work tools — and let sponsors settle them directly. No middleman,
+        no wahala.
+      </p>
+      <div class="hero-actions">
+        <a href="Bill-Me v1.0.apk" download class="btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Download APK
+        </a>
+        <a href="https://bill-me-web.vercel.app/" target="_blank" rel="noopener" class="btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+          </svg>
+          Open Web App
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-frame">
+        <img src="images/281632.jpg" alt="Bill Me app home screen showing verified bill feed" />
+        <div class="hero-float-badge badge-1">
+          <div class="float-icon green">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+          </div>
+          AI Verified
+        </div>
+        <div class="hero-float-badge badge-2">
+          <div class="float-icon dark">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+            </svg>
+          </div>
+          Direct P2P
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" id="how-it-works">
+    <div class="section-header">
+      <div class="section-label">How It Works</div>
+      <h2>Three steps. No long story.</h2>
+      <p>From posting your bill to getting it funded — it's straightforward.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Upload your bill</h3>
+        <p>Snap a photo or upload a PDF of your school fee, medical invoice, or work tool receipt.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>AI verifies it</h3>
+        <p>Our AI audits your receipt for authenticity, validates institution data, and redacts sensitive info.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Sponsor pays directly</h3>
+        <p>Sponsors fund your bill straight to your bank account or institution. Zero middleman.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="features">
+
+    <!-- Feature 1: AI Verification -->
+    <div class="feature-row">
+      <div class="feature-text">
+        <div class="feature-tag">AI-Powered</div>
+        <h3>Pure receipts. No long story.</h3>
+        <p>
+          Every school fee, medical bill, and work invoice is audited by AI before it goes live. Duplicate detection,
+          institution validation, and sensitive data redaction — built in.
+        </p>
+        <ul class="feature-list">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            OCR receipt scanning and validation
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            Duplicate image detection (pHash)
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            BVN/NIN auto-redaction for privacy
+          </li>
+        </ul>
+      </div>
+      <div class="feature-visual">
+        <img src="images/281637.jpg" class="feature-phone" alt="Bill upload screen with AI verification" />
+      </div>
+    </div>
+
+    <!-- Feature 2: Direct Settlement -->
+    <div class="feature-row reverse">
+      <div class="feature-text">
+        <div class="feature-tag">Non-Custodial</div>
+        <h3>Zero middleman. Direct to account.</h3>
+        <p>
+          Sponsors fund requests straight into the recipient's verified bank account or institutional payment channel.
+          No platform custody, no delays, no trust issues.
+        </p>
+        <ul class="feature-list">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            Direct P2P bank transfers
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            OPay, Moniepoint, GTBank, Palmpay supported
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            Transparent — sponsors see exactly where money goes
+          </li>
+        </ul>
+      </div>
+      <div class="feature-visual">
+        <img src="images/281554.jpg" class="feature-phone" alt="Direct P2P settlement screen" />
+      </div>
+    </div>
+
+    <!-- Feature 3: Padi Need -->
+    <div class="feature-row">
+      <div class="feature-text">
+        <div class="feature-tag">Padi Need</div>
+        <h3>Urgent 2k? Quick micro-funding.</h3>
+        <p>
+          Not everything needs an invoice. Padi Need is a lightweight, text-first feed for urgent daily needs — data,
+          transport fare, airtime. Post it, tag it, get it settled.
+        </p>
+        <ul class="feature-list">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            No invoice upload required
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            Quick tags: Urgent 2k, Data & Airtime, Transport
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            AI-polished descriptions for better reach
+          </li>
+        </ul>
+      </div>
+      <div class="feature-visual">
+        <img src="images/281565.jpg" class="feature-phone" alt="Padi Need quick posting screen" />
+      </div>
+    </div>
+
+  </section>
+
+  <!-- App Showcase -->
+  <section id="app" style="padding: 40px 0 100px;">
+    <div class="showcase">
+      <div class="section-label" style="justify-content: center;">The App</div>
+      <h2>See Bill Me in action</h2>
+      <p>A clean, fast Android experience built for how Nigerians actually use their phones.</p>
+      <div class="showcase-phones">
+        <img src="images/281553.jpg" alt="Onboarding: AI Receipt Audit" />
+        <img src="images/281632.jpg" alt="Home feed" class="featured" />
+        <img src="images/281555.jpg" alt="Patron rank system" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-value">100%</div>
+      <div class="stat-label">AI-verified bills</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">0%</div>
+      <div class="stat-label">Platform fees</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">P2P</div>
+      <div class="stat-label">Direct settlement</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section" id="download">
+    <div class="cta-card">
+      <h2>Ready to get your<br />bills sorted?</h2>
+      <p>Download the app and post your first bill in under 2 minutes. Or open the web app from any browser.</p>
+      <div class="cta-buttons">
+        <a href="Bill-Me v1.0.apk" download class="btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Download APK
+        </a>
+        <a href="https://bill-me-web.vercel.app/" target="_blank" rel="noopener" class="btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+          </svg>
+          Open Web App
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/image_bce3e3fa.png" alt="Bill Me" />
+        <span>Bill Me</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="mailto:petes-tech@proton.me">Contact</a></li>
+        <li><a href="https://x.com" target="_blank" rel="noopener">X (Twitter)</a></li>
+      </ul>
+      <div class="footer-copy">&copy; 2026 Bill Me. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+    }
+
+    // Scroll-based reveal animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.step-card, .feature-row, .stat, .cta-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+
+</html>

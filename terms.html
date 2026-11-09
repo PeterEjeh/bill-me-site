@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use — Bill Me</title>
+  <meta name="description" content="Terms of Use for Bill Me — Transparent P2P Bill Sponsorship Platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #F7F8F6;
+      --primary: #10B981;
+      --primary-dark: #059669;
+      --text: #111827;
+      --text-muted: #4B5563;
+      --card-surface: #FFFFFF;
+      --border: rgba(17, 24, 39, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 248, 246, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+    .nav-logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .nav-back {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    /* Content Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+    }
+    .legal-card {
+      background: var(--card-surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+    @media (max-width: 640px) {
+      .legal-card { padding: 28px 20px; }
+      .container { padding: 32px 16px 64px; }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .meta {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-top: 36px;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    p {
+      margin-bottom: 16px;
+      color: var(--text-muted);
+    }
+    ul, ol {
+      margin-bottom: 18px;
+      padding-left: 24px;
+      color: var(--text-muted);
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    a {
+      color: var(--primary-dark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    a:hover {
+      color: var(--primary);
+    }
+
+    .callout {
+      background: rgba(16, 185, 129, 0.05);
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 24px 0;
+    }
+    .callout p {
+      margin-bottom: 0;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/image_bce3e3fa.png" alt="Bill Me" />
+        <span>Bill Me</span>
+      </a>
+      <a href="index.html" class="nav-back">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- Legal Content -->
+  <div class="container">
+    <article class="legal-card">
+      <div class="badge">Terms &amp; Conditions</div>
+      <h1>Terms of Use</h1>
+      <div class="meta">
+        <strong>Effective Date:</strong> November 9, 2026 &bull; <strong>Platform:</strong> Bill Me (Android &amp; PWA)
+      </div>
+
+      <h2>1. Acceptance of Terms</h2>
+      <p>
+        By accessing or using the Bill Me mobile application or web platform ("Platform"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, do not use the Platform.
+      </p>
+
+      <h2>2. Nature of the Platform (Non-Gateway / Zero-Middleman Disclaimer)</h2>
+      <div class="callout">
+        <p>
+          <strong>Not a Bank, Payment Processor, or Escrow Agent:</strong> Bill Me is a technology platform for document verification and community discovery. <strong>Bill Me does not collect, hold, process, or transmit money.</strong>
+        </p>
+      </div>
+      <ul>
+        <li><strong>Direct Peer-to-Peer (P2P) &amp; Direct-to-Institution Transfers:</strong> All payments occur outside the Platform via the Sponsor’s own banking or mobile money application directly to the Institution’s bursary account or the Beneficiary’s designated bank account.</li>
+        <li><strong>Irrevocability of Transfers:</strong> Because bank transfers are executed directly between bank accounts outside Bill Me, Bill Me cannot reverse, refund, or recall any bank transfer once sent by a Sponsor. Sponsors are solely responsible for verifying the recipient account name and number in their banking app before authorizing a transfer.</li>
+      </ul>
+
+      <h2>3. Eligibility &amp; Account Responsibilities</h2>
+      <ul>
+        <li>You must be at least 18 years old (or the age of legal majority in your jurisdiction) or have the consent of a parent/legal guardian to post a bill or sponsor a listing.</li>
+        <li>You must authenticate using a valid Google account. You are responsible for maintaining the security of your account credentials.</li>
+      </ul>
+
+      <h2>4. Rules for Beneficiaries (Posting Bills &amp; Padi Needs)</h2>
+      <p>By uploading a document or publishing a listing on Bill Me, you represent, warrant, and agree that:</p>
+      <ul>
+        <li><strong>Unpaid Invoices Only:</strong> In the Invoice Bill flow, you may only upload genuine, unpaid invoices, tuition schedules, medical bills, exam fee notices, or equipment quotes. Uploading already-paid payment receipts or bank transfer slips as a bill is strictly prohibited and automatically blocked.</li>
+        <li><strong>No Duplicate Listings:</strong> You may not upload or publish the same invoice more than once—whether from the same account or across multiple accounts. Our two-phase anti-duplicate engine (Step 1 perceptual hash check and Step 3 composite metadata fingerprint check) will block duplicate uploads. Attempting to bypass duplicate checks across multiple accounts will result in silent fraud flagging and permanent account suspension.</li>
+        <li><strong>No Forgery or Manipulation:</strong> You must not alter, photoshop, or fabricate amounts, account numbers, institution letterheads, or dates on any uploaded document.</li>
+        <li><strong>Honest Receipt Confirmation:</strong> When a Sponsor uploads a verified transfer receipt for your bill, you agree to check your bank or institution portal promptly and mark the receipt as confirmed once funds arrive.</li>
+      </ul>
+
+      <h2>5. Rules for Sponsors (Sponsorships &amp; Receipt Verification)</h2>
+      <p>By sponsoring a bill or uploading a transfer receipt, you agree that:</p>
+      <ul>
+        <li><strong>Voluntary Contributions:</strong> All sponsorships are voluntary gifts/grants made directly to the institution or Beneficiary with no expectation of financial return, repayment, loans, or personal favors.</li>
+        <li><strong>Authentic Transfer Receipts Only:</strong> You may only upload genuine debit transfer receipts for transfers you actually completed. Uploading fake, edited, or recycled receipts is prohibited. Every uploaded receipt's NIBSS Session ID / transaction reference is locked in our <code>settled_receipts</code> registry and cannot be reused.</li>
+        <li><strong>Respectful Conduct:</strong> Sponsors must never demand personal favors, private photographs, social media handles, or off-platform meetings in exchange for sponsoring a bill.</li>
+      </ul>
+
+      <h2>6. Giveaway Campaign Pools (<code>/giveaway/:slug</code>)</h2>
+      <ul>
+        <li><strong>Pool Creation &amp; Visibility:</strong> Users ("Pool Creators" or "Patrons") may launch Campaign Pools with a custom <code>/giveaway/:slug</code> link and choose whether the pool is Link-Only (accessible only via the shared link) or Public on Home Screen (featured on the Bill Me Discover feed).</li>
+        <li><strong>No Guarantee of Funding:</strong> Posting an invoice or Quick Need into a Giveaway Campaign Pool queues the bill for visibility within that pool; it does not guarantee that the Pool Creator or any Sponsor will fund the bill.</li>
+      </ul>
+
+      <h2>7. In-App Safe Chat &amp; Zero-Tolerance Safety Policy</h2>
+      <p>All conversations on Bill Me are subject to real-time AI safety moderation. The following behaviors are strictly prohibited and will result in immediate message interception (<code>BLOCKED</code>) and potential account termination:</p>
+      <ul>
+        <li>Harassment, bullying, threats, extortion, or quid-pro-quo demands.</li>
+        <li>Requesting or sharing private photographs, romantic/sexual solicitations, or personal social media handles/phone numbers.</li>
+        <li>Requesting or sharing BVN, NIN, SSN, PINs, OTPs, CVVs, or passwords.</li>
+        <li>Coercing users into fraudulent off-platform kickback schemes (e.g., "I will send ₦50,000 if you send ₦20,000 back").</li>
+      </ul>
+
+      <h2>8. AI Verification Disclaimer</h2>
+      <p>
+        Bill Me uses automated artificial intelligence (Google Gemini via Firebase AI Logic) to extract text, classify invoices vs. receipts, audit transfer slips, and moderate chat messages. AI verification is an informational trust aid, not a legal or financial guarantee. A "Verified Format" badge indicates that the document passed automated structural and consistency checks; Sponsors should always exercise independent judgment and prefer paying institutions directly (Direct to Institution rail) whenever available.
+      </p>
+
+      <h2>9. Account Suspension &amp; Termination</h2>
+      <p>We reserve the right to remove any bill listing, hide any Campaign Pool, or suspend/terminate any user account at our sole discretion if we detect:</p>
+      <ul>
+        <li>Cross-account duplicate invoice fraud (<code>fraud_flags</code>).</li>
+        <li>Forged or manipulated invoices or transfer receipts.</li>
+        <li>Violations of our Safe Chat Zero-Tolerance Policy.</li>
+      </ul>
+
+      <h2>10. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, Bill Me and its creators, developers, and affiliates shall not be liable for any direct, indirect, incidental, or consequential damages arising from:</p>
+      <ul>
+        <li>Erroneous bank transfers sent to an incorrect account number by a Sponsor;</li>
+        <li>Misrepresentation by a Beneficiary or Sponsor;</li>
+        <li>Temporary network outages, banking delays, or NIBSS/inter-bank transfer failures.</li>
+      </ul>
+
+      <h2>11. Changes to These Terms</h2>
+      <p>
+        We may update these Terms from time to time to reflect new features, regulatory requirements, or security enhancements. Continued use of Bill Me after updates constitutes acceptance of the revised Terms.
+      </p>
+
+      <h2>12. Contact Information</h2>
+      <p>
+        For questions regarding these Terms, fraud reports, or dispute assistance, contact us at:
+        <br />
+        <a href="mailto:petes-tech@proton.me"><strong>petes-tech@proton.me</strong></a>
+      </p>
+    </article>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2026 Bill Me. All rights reserved.
+  </footer>
+
+</body>
+</html>
