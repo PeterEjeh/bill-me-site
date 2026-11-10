@@ -699,8 +699,11 @@
 
     .footer-links {
       display: flex;
+      flex-wrap: wrap;
       gap: 28px;
       list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
     .footer-links a {
@@ -708,6 +711,7 @@
       color: var(--text-muted);
       font-size: 0.85rem;
       font-weight: 500;
+      white-space: nowrap;
       transition: color 0.2s;
     }
 
@@ -841,17 +845,42 @@
         padding: 48px 24px;
       }
 
+      .footer {
+        padding: 40px 20px 80px;
+      }
+
       .footer-inner {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 20px;
       }
 
       .footer-links {
         justify-content: center;
+        gap: 12px 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-cta {
+        display: none;
       }
     }
 
     @media (max-width: 500px) {
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: center;
+        gap: 12px 24px;
+        text-align: center;
+      }
+
+      .footer-copy {
+        margin-top: 4px;
+      }
+
       .showcase-phones img {
         width: 130px;
       }
@@ -901,7 +930,6 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">Built for Nigeria</div>
       <h1>Post your bill.<br /><span class="accent">Get sponsored.</span></h1>
       <p class="hero-sub">
         Upload verified school fees, medical bills, or work tools — and let sponsors settle them directly. No middleman,
